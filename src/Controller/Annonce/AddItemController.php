@@ -1,24 +1,24 @@
 <?php
 
-namespace controller;
+namespace Controller\Annonce;
 
 use model\Annonce;
 use model\Annonceur;
 
-class addItem
+class AddItemController
 {
 
     function addItemView($twig, $menu, $chemin, $cat, $dpt)
     {
         $template = $twig->load("add.html.twig");
-        echo $template->render(array(
+        echo $template->render(
+            array(
                 "breadcrumb"   => $menu,
                 "chemin"       => $chemin,
                 "categories"   => $cat,
                 "departements" => $dpt
             )
         );
-
     }
 
     private function isEmail($email)
@@ -99,7 +99,8 @@ class addItem
         if (!empty($errors)) {
 
             $template = $twig->load("add-error.html.twig");
-            echo $template->render(array(
+            echo $template->render(
+                array(
                     "breadcrumb" => $menu,
                     "chemin"     => $chemin,
                     "errors"     => $errors
