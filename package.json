@@ -11,6 +11,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "jquery": "^3.7.1",
         "sass": "^1.72.0"
     }
 }
