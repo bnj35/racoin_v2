@@ -164,7 +164,7 @@ $app->get('/categorie/{n}', function (Request $request, Response $response, arra
     return $response;
 });
 
-$app->get('/api/index', function (Request $request, Response $response) use ($twig, $menu, $chemin, $categorieController) {
+$app->get('/api(/)', function (Request $request, Response $response) use ($twig, $menu, $chemin, $categorieController) {
     $template = $twig->load('api.html.twig');
     $menu = [
         [
